@@ -106,6 +106,10 @@
           {{ user }}
         </pre>
 
+        <pre>
+            {{ postsStore.posts }}
+        </pre>
+
       </div>
     </div>
   </section>
@@ -115,8 +119,12 @@
 <script setup>
 import { storeToRefs } from 'pinia'
 import { useUser } from '@/store/user.js'
+import { usePosts } from '@/store/posts.js'
 
 const userStore = useUser()
 userStore.getUser()
 const { user, fullName } = storeToRefs(userStore)
+
+const postsStore = usePosts()
+userStore.getUserPosts()
 </script>

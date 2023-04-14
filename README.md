@@ -139,7 +139,7 @@ const { user, fullName } = storeToRefs(userStore)
 Crie
 
 ```
-touch store/posts.js
+touch src/store/posts.js
 ```
 
 ```js
@@ -158,10 +158,10 @@ export const usePosts = defineStore('posts', {
 })
 ```
 
-Edite `App.vue`
+Edite `Dashboard.vue`
 
 ```js
-import { usePosts } from './store/posts.js'
+import { usePosts } from '@/store/posts.js'
 
 const postsStore = usePosts()
 
