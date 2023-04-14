@@ -101,7 +101,11 @@
       </aside>
       <div class="mt-5 p-5">
         <button class="button is-primary">Toggle menu</button>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus voluptatum, beatae, eum dolorem autem odio ab, perspiciatis aliquid saepe, corporis consectetur repellat vitae quisquam nesciunt dolorum impedit reprehenderit at! Tempore.</p>
+
+        <pre>
+          {{ userStore.user }}
+        </pre>
+
       </div>
     </div>
   </section>
@@ -109,5 +113,7 @@
 </template>
 
 <script setup>
+import { useUser } from '@/store/user.js'
 
+const userStore = useUser()
 </script>
