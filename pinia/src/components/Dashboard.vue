@@ -102,12 +102,19 @@
       <div class="mt-5 p-5">
         <button class="button is-primary">Toggle menu</button>
 
+        <h1 class="title">Users</h1>
         <pre>
           {{ user }}
         </pre>
 
+        <h1 class="title">Posts</h1>
         <pre>
             {{ postsStore.posts }}
+        </pre>
+
+        <h1 class="title">Cart</h1>
+        <pre>
+          {{ cartStore.cart }}
         </pre>
 
       </div>
@@ -120,6 +127,8 @@
 import { storeToRefs } from 'pinia'
 import { useUser } from '@/store/user.js'
 import { usePosts } from '@/store/posts.js'
+import { useCart } from '@/store/cart.js'
+
 
 const userStore = useUser()
 userStore.getUser()
@@ -127,4 +136,6 @@ const { user, fullName } = storeToRefs(userStore)
 
 const postsStore = usePosts()
 userStore.getUserPosts()
+
+const cartStore = useCart()
 </script>

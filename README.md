@@ -189,6 +189,10 @@ actions: {
 
 Crie `store/cart.js`
 
+```
+touch src/store/cart.js
+```
+
 ```js
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
@@ -210,10 +214,10 @@ export const useCart = defineStore('cart', () => {
 })
 ```
 
-Edite `App.vue`
+Edite `Dashboard.vue`
 
 ```js
-import { useCart } from './store/cart.js'
+import { useCart } from '@/store/cart.js'
 
 const cartStore = useCart()
 
