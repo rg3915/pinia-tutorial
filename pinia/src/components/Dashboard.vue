@@ -103,7 +103,7 @@
         <button class="button is-primary">Toggle menu</button>
 
         <pre>
-          {{ userStore.user }}
+          {{ user }}
         </pre>
 
       </div>
@@ -113,7 +113,10 @@
 </template>
 
 <script setup>
+import { storeToRefs } from 'pinia'
 import { useUser } from '@/store/user.js'
 
 const userStore = useUser()
+userStore.getUser()
+const { user, fullName } = storeToRefs(userStore)
 </script>

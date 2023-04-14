@@ -118,15 +118,15 @@ export const useUser = defineStore('user', {
 })
 ```
 
-Edite `App.vue`
+Edite `Dashbard.vue`
 
 ```js
-import { storeRefs } from 'pinia'
-import { useUser } from './store/user.js'
+import { storeToRefs } from 'pinia'
+import { useUser } from '@/store/user.js'
 
 const userStore = useUser()
 userStore.getUser()
-const { user, fullName } = storeRefs(userStore)
+const { user, fullName } = storeToRefs(userStore)
 
 
 <pre>
