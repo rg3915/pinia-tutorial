@@ -230,6 +230,10 @@ const cartStore = useCart()
 
 Crie `store/menu.js`
 
+```
+touch src/store/menu.js
+```
+
 ```js
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
@@ -255,10 +259,10 @@ export const useMenu = defineStore('menu', {
 })
 ```
 
-Edite `App.vue`
+Edite `Dashboard.vue`
 
 ```js
-import { useMenu } from './store/menu.js'
+import { useMenu } from '@/store/menu.js'
 
 const menuStore = useMenu()
 

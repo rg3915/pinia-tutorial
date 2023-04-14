@@ -66,6 +66,7 @@
         id="aside"
         class="column is-2 sidebar"
         style="background-color: #363636; color: white; height: 100vh; overflow: auto;"
+         v-if="menuStore.isOpen"
       >
         <div class="menu">
           <ul class="menu-list">
@@ -100,7 +101,7 @@
         </div>
       </aside>
       <div class="mt-5 p-5">
-        <button class="button is-primary">Toggle menu</button>
+        <button class="button is-primary" @click="menuStore.toggle()">Toggle menu</button>
 
         <h1 class="title">Users</h1>
         <pre>
@@ -128,7 +129,7 @@ import { storeToRefs } from 'pinia'
 import { useUser } from '@/store/user.js'
 import { usePosts } from '@/store/posts.js'
 import { useCart } from '@/store/cart.js'
-
+import { useMenu } from '@/store/menu.js'
 
 const userStore = useUser()
 userStore.getUser()
@@ -138,4 +139,6 @@ const postsStore = usePosts()
 userStore.getUserPosts()
 
 const cartStore = useCart()
+
+const menuStore = useMenu()
 </script>
